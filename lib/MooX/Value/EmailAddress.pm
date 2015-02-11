@@ -8,7 +8,7 @@ use namespace::clean;
 use MooX::Value::ValidationUtils;
 use MooX::Value::Domain;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 extends 'MooX::Value';
 
@@ -70,7 +70,7 @@ MooX::Value::EmailAddress - A value object representing a valid email address.
 
 =head1 VERSION
 
-This document describes MooX::Value::EmailAddress version 0.03
+This document describes MooX::Value::EmailAddress version 0.04
 
 =head1 SYNOPSIS
 
@@ -85,8 +85,9 @@ A C<MooX::Value::EmailAddress> value object represents a valid email address.
 That email address may not represent an address that can actually receive an
 email, but the form of the address is at least valid.
 
-The specification of the email address is given by RFC 5322 and supports both
-the quoted and dotted forms.
+The specification of the email address defined by the 'addr-spec' in RFC 5322 3.4.1. It supports both
+the quoted and dotted forms of the address. It does not support the inclusion of the display name,
+such as C<< G. Wade Johnson <gwadej@cpan.org> >>.
 
 =head1 INTERFACE
 
@@ -123,7 +124,7 @@ C<MooX::Value::EmailAddress> requires no configuration files or environment vari
 
 =head1 DEPENDENCIES
 
-None.
+L<Moo>, L<namespace::clean>
 
 =head1 INCOMPATIBILITIES
 

@@ -6,7 +6,7 @@ use strict;
 use Moo;
 use namespace::clean;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 has value => ( is => 'ro' );
 
@@ -72,7 +72,7 @@ MooX::Value - Base class for minimal Value Object classes
 
 =head1 VERSION
 
-This document describes MooX::Value version 0.03
+This document describes MooX::Value version 0.04
 
 =head1 SYNOPSIS
 
@@ -258,6 +258,43 @@ No bugs have been reported.
 Please report any bugs or feature requests to
 C<bug-moox-value@rt.cpan.org>, or through the web interface at
 L<http://rt.cpan.org>.
+
+=head1 SEE ALSO
+
+Before writing this module, I did examine other modules that implemented the Value
+Object pattern. Ultimately, I determined that none really matched my need.
+
+=over 4
+
+=item Class::Value
+
+Implements typed Value objects. Unfortunately, the base class has a relatively large
+interface (44 public methods). Most of these would only apply to number-like objects.
+Many of the derived classes were not number-like, leading to interface surprise.
+
+=item Class::Value::*
+
+There are a number of classes derived from Class::Value that implement particular
+Value objects. They all share the design decisions of Class::Value.
+
+=item Time::HiRes::Value
+
+Implements a reasonable value object for microsecond level times. It is not a
+general approach to Value objects. The fact that the objects created are
+mutable violated one of the constraints I was aiming for.
+
+=item Scalar::Boolean
+
+Another Value-like object. Limits the value of created object to Perl boolean values.
+It is not a general approach to Value objects. Created objects are also mutable, so
+they do not meet the criteria I was aiming for.
+
+=item Moose::Autobox::Value
+
+This is the core funcitonality allowing autoboxing of Perl primitives, not Value
+objects.
+
+=back
 
 =head1 ACKNOWLEDGEMENTS
 
