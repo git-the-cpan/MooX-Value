@@ -1,13 +1,10 @@
 ---
-abstract: 'Base class for minimal Value Object classes'
+abstract: 'Base class for minimal Value Object classes (DEPRECATED)'
 author:
   - 'G. Wade Johnson <gwadej@cpan.org>'
-build_requires:
-  ExtUtils::MakeMaker: '0'
-configure_requires:
-  ExtUtils::MakeMaker: '0'
+build_requires: {}
 dynamic_config: 1
-generated_by: 'ExtUtils::MakeMaker version 6.98, CPAN::Meta::Converter version 2.143240'
+generated_by: 'ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.150001'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -17,12 +14,7 @@ no_index:
   directory:
     - t
     - inc
-requires:
-  Moo: '0'
-  Test::Exception: '0'
-  Test::More: '0'
-  namespace::clean: '0'
-  perl: '5.008'
 resources:
   repository: https://github.com/gwadej/MooX-Value.git
-version: '0.04'
+version: '0.05'
+x_deprecated: 1
